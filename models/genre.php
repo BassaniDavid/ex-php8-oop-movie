@@ -1,19 +1,19 @@
 <?php
 
 // definire classe genere
-class Genre extends Movie {
-    // definire istanza
-    public $genere;
+class Genre {
 
-    // uso del trait
-    Use protagonista;
+    // definire istanza genere
+    protected $genere;
 
     // costruttore
-    public function __construct($_nome, $_regista, $_anno,$_generi, $_genere)
-    {   
-        // passiamo i paramentri al genitore
-        parent::__construct($_nome, $_regista, $_anno, $_generi);
+    public function __construct($_genere){   
         $this->genere = $_genere;
+    }
+
+    // funzione get
+    public function getGenre(){
+        return $this->genere;
     }
 }
 
