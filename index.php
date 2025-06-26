@@ -6,13 +6,15 @@ class Movie {
     public $nome;
     public $regista;
     public $anno;
+    public $generi;
 
     // costruttore
-    public function __construct($_nome, $_regista, $_anno)
+    public function __construct($_nome, $_regista, $_anno, $_generi)
     {
         $this->nome = $_nome;
         $this->regista = $_regista;
         $this->anno = $_anno;
+        $this->generi = $_generi;
     }
 
     // metodo get per il titolo
@@ -28,16 +30,17 @@ class Genre extends Movie {
     public $genere;
 
     // costruttore
-    public function __construct($_nome, $_regista, $_anno, $_genere)
+    public function __construct($_nome, $_regista, $_anno,$_generi, $_genere)
     {   
         // passiamo i paramentri al genitore
-        parent::__construct($_nome, $_regista, $_anno);
+        parent::__construct($_nome, $_regista, $_anno, $_generi);
         $this->genere = $_genere;
     }
 }
 
-$Ballerina = new genre("Ballerina", " Len Wiseman", 2025, "azione");
-$MissionImpossible = new genre("Mission: Impossible – The Final Reckoning", "Christopher McQuarrie", 2025, "azione");
+
+$Ballerina = new genre("Ballerina", " Len Wiseman", 2025, ["azione", "thriller"], "azione");
+$MissionImpossible = new genre("Mission: Impossible – The Final Reckoning", "Christopher McQuarrie", 2025, ["azione", "thriller"], "azione");
 
 var_dump($Ballerina);
 var_dump($MissionImpossible);
