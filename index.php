@@ -1,4 +1,12 @@
 <?php
+// definire trait da aggiungere a Movie
+trait Protagonista {
+    public $protagonista;
+
+    public function setProtagonista($newprotagonista) {
+            $this-> protagonista = $newprotagonista;
+        }
+}
 
 // definire classe movie
 class Movie {
@@ -29,6 +37,9 @@ class Genre extends Movie {
     // definire istanza
     public $genere;
 
+    // uso del trait
+    Use protagonista;
+
     // costruttore
     public function __construct($_nome, $_regista, $_anno,$_generi, $_genere)
     {   
@@ -39,9 +50,11 @@ class Genre extends Movie {
 }
 
 
+
+
 $Ballerina = new genre("Ballerina", " Len Wiseman", 2025, ["azione", "thriller"], "azione");
 $MissionImpossible = new genre("Mission: Impossible – The Final Reckoning", "Christopher McQuarrie", 2025, ["azione", "thriller"], "azione");
-
+$Ballerina->setProtagonista("keanu Reeves");
 var_dump($Ballerina);
 var_dump($MissionImpossible);
 
