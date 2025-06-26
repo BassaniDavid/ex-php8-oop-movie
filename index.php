@@ -2,6 +2,7 @@
 
 // definire classe movie
 class Movie {
+    // definire istanze
     public $nome;
     public $regista;
     public $anno;
@@ -21,8 +22,22 @@ class Movie {
 
 }
 
-$Ballerina = new Movie("Ballerina", " Len Wiseman", 2025);
-$MissionImpossible = new Movie("Mission: Impossible – The Final Reckoning", "Christopher McQuarrie", 2025);
+// definire classe genere
+class Genre extends Movie {
+    // definire istanza
+    public $genere;
+
+    // costruttore
+    public function __construct($_nome, $_regista, $_anno, $_genere)
+    {   
+        // passiamo i paramentri al genitore
+        parent::__construct($_nome, $_regista, $_anno);
+        $this->genere = $_genere;
+    }
+}
+
+$Ballerina = new genre("Ballerina", " Len Wiseman", 2025, "azione");
+$MissionImpossible = new genre("Mission: Impossible – The Final Reckoning", "Christopher McQuarrie", 2025, "azione");
 
 var_dump($Ballerina);
 var_dump($MissionImpossible);
